@@ -1,0 +1,9 @@
+Election Results
+-------------------------
+Marsh:  64.36% (2,265,957)
+Queen:  19.8% (697,203)
+Bamoo:  9.9% (348,658)
+Trandee:  2.97% (104,617)
+Raffah:  2.97% (104,566)
+ 
+Winner: Marsh
