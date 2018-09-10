@@ -1,6 +1,6 @@
 import csv
 
-filepath = './election_data.csv'
+filepath = './Resources/election_data.csv'
 
 
 def numFormat(num):
@@ -60,27 +60,33 @@ with open(filepath, newline="") as file:
         for i in range(len(counts)):
             ratios[i] = getRatios(counts[i], total)
 
-    print(" ")
-    print("Election Results")
-    print("-------------------------")
     winner = ""
     ratio = 0
     maxRatio = ratios[0]
+
+    print(" ")
+    print("Election Results")
+    print("-------------------------")
+
     for cand, count, ratio in zip(candidates, counts, ratios):
         print(f"{cand}:  {ratio}% ({numFormat(count)})")
         winner = getMaxRatio(cand, ratio, maxRatio, winner)
+
     print(" ")
     print(winner)
 
 with open("results.txt", "w") as results:
-    print("Election Results", file=results)
-    print("-------------------------", file=results)
     winner = ""
     ratio = 0
     maxRatio = ratios[0]
+
+    print("Election Results", file=results)
+    print("-------------------------", file=results)
+
     for cand, count, ratio in zip(candidates, counts, ratios):
         print(f"{cand}:  {ratio}% ({numFormat(count)})", file=results)
         winner = getMaxRatio(cand, ratio, maxRatio, winner)
+
     print(" ", file=results)
     print(winner, file=results)
 
